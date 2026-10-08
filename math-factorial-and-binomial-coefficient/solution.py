@@ -27,15 +27,8 @@ def n_choose_k(n, k):
         an n-element set, as an integer.
     """
     # TODO: Implement using factorial, from Theory's formula.
-    num = den1 = den2 = 1
-    for i in range(1, n + 1):
-        num *= i
+    num = factorial(n)
+    den1 = factorial(k)
+    den2 = factorial(n - k)
 
-    for i in range(1, k + 1):
-        den1 *= i
-
-    for i in range(1, (n - k) + 1):
-        den2 *= i
-
-    result = num // (den1 * den2)
-    return result
+    return num // (den1 * den2)
